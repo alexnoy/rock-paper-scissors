@@ -20,7 +20,7 @@ function playGame() {
         let choice = prompt("Select one: rock, paper, scissors");
     
         if (choice.toLowerCase() != "rock" && choice.toLowerCase() != "paper" && choice.toLowerCase() != "scissors") {
-            return "Selection incorrect refresh to select again.";
+            throw new Error("Selection incorrect refresh to start again.");
         }else {
             return choice.toLowerCase();
         }
@@ -57,3 +57,5 @@ function playGame() {
         }
     }
 }
+
+console.log(playGame());
