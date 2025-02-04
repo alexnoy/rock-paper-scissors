@@ -60,6 +60,17 @@ function playGame() {
         let computerChoice = getComputerChoice();
         console.log(playRound(humanChoice,computerChoice));
     }
+
+    if (humanScore > computerScore) {
+        console.log("Total player score:", humanScore, "total Computer score:", computerScore);
+        return "Player Wins!!"
+    }else if (humanScore < computerScore) {
+        console.log("Total player score:", humanScore, "total Computer score:", computerScore);
+        return "Computer Wins!!"
+    }else {
+        console.log("Total player score:", humanScore, "total Computer score:", computerScore);
+        return "Tie Game!"
+    }
 }
 
 console.log(playGame());
