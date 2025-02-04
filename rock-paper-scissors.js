@@ -1,8 +1,6 @@
 function playGame() {
     let computerScore = 0;
     let humanScore = 0;
-    let humanChoice = getHumanChoice();
-    let computerChoice = getComputerChoice();
 
     function getComputerChoice() {
         let num = Math.floor(Math.random() * 3);
@@ -55,6 +53,12 @@ function playGame() {
             console.log("Player score:", humanScore, "Computer score:", computerScore);
             return "Tie. choices were the same.";
         }
+    }
+
+    for (i = 0; i < 5; i++) {
+        let humanChoice = getHumanChoice();
+        let computerChoice = getComputerChoice();
+        console.log(playRound(humanChoice,computerChoice));
     }
 }
 
