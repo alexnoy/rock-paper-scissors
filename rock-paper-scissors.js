@@ -12,6 +12,7 @@ const results = document.querySelector('#results');
 
 buttons.forEach(button => button.addEventListener('click', function(e){
     playRound(e.target.id, getComputerChoice());
+    determineWinner();
 }));
 
 function playRound(humanChoice,computerChoice) {
@@ -25,15 +26,15 @@ function playRound(humanChoice,computerChoice) {
     results.textContent = (`Player Score: ${humanScore} / Computer Score: ${computerScore}`);
 }
 
-function playGame() {
-    if (humanScore > computerScore) {
-        console.log("Total player score:", humanScore, "total Computer score:", computerScore);
-        return "Player Wins!!"
-    }else if (humanScore < computerScore) {
-        console.log("Total player score:", humanScore, "total Computer score:", computerScore);
-        return "Computer Wins!!"
-    }else {
-        console.log("Total player score:", humanScore, "total Computer score:", computerScore);
-        return "Tie Game!"
+function determineWinner() {
+    if (humanScore == 5) {
+        results.textContent = ('Game Over. Player Wins!!')
+    }else if (computerScore == 5) {
+        results.textContent = ('Game Over. Computer Wins!!')
+    }
+
+    if (humanScore == 5 || computerScore == 5) {
+        humanScore = 0;
+        computerScore = 0;
     }
 }
